@@ -1,9 +1,14 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import Chart from '../Chart/Chart';
 
 // import React, { PureComponent } from 'react';
 
 const Statistic = () => {
-
+    const loaddata = useLoaderData();
+    console.log(loaddata);
+    const { data } = loaddata;
+    console.log(data)
 
 
 
@@ -11,7 +16,9 @@ const Statistic = () => {
 
     return (
         <div>
-            <h2> statistic page:</h2>
+            {
+                data.map(st => <Chart key={st.id} st={st}></Chart>)
+            }
         </div>
     );
 };
