@@ -22,6 +22,7 @@ export const router = createBrowserRouter([
             {
                 path: 'statistic',
 
+
                 element: <Statistic></Statistic>
             },
             {

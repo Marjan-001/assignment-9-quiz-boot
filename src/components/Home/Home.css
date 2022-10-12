@@ -58,3 +58,17 @@ p {
     animation-iteration-count: 4;
     animation-direction: alternate-reverse;
 }
+
+@media only screen and (max-width: 500px) {
+    .topic-container {
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 30px;
+    }
+}
+
+@media only screen and (min-width: 505px) and (max-width:900px) {
+    .topic-container {
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 30px;
+    }
+}

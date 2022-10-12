@@ -1,7 +1,11 @@
 import React from 'react';
+
 // import React, { PureComponent } from 'react';
 
 const Statistic = () => {
+
+
+
 
 
 
