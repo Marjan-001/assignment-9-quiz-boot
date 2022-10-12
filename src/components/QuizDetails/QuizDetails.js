@@ -1,28 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
+import { EyeIcon } from '@heroicons/react/24/solid'
 
 const QuizDetails = ({ qu }) => {
     const { correctAnswer, options, question } = qu;
 
-
-
-
-    const handleCorrectAnswer = (value, correctAnswer) => {
-        if (value === correctAnswer) {
-            console.log('match');
-        }
-
+    const handleCorrectAnswer = (correctAnswer) => {
 
 
     }
-
+    const answer = () => {
+        alert(correctAnswer);
+    }
 
 
     return (
         <div className='quiz-box border border-spacing-5 mb-4'>
 
 
+            <EyeIcon
+                onClick={answer}
+
+
+                className="h-6 w-6 text-white" />
 
 
             <div className='text-2xl font-bold text-white text-center'>
