@@ -1,44 +1,40 @@
-import { Tooltip } from 'flowbite-react';
-import React, { } from 'react';
-import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, XAxis, YAxis } from 'recharts';
+import axios from 'axios';
+// import { Tooltip } from 'flowbite-react';
+import React, { useEffect, useState } from 'react';
+import { Bar, BarChart, XAxis, YAxis } from 'recharts';
 
-const Chart = ({ st }) => {
+const Chart = () => {
 
-    const dataChart = [
-        {
-            name: st.name,
-            total: st.total
-        }
-    ]
+    const [bar, setBar] = useState([]);
+    useEffect(() => {
+        axios.get('https://openapi.programming-hero.com/api/quiz')
 
+            .then(data => {
+                const chartDetails = data.data.data;
+                const chartData = chartDetails.map(chart => {
 
+                    const singleData = {
+                        name: chart.name,
+                        total: chart.total
+                    }
+                    return singleData;
+                })
+                console.log(chartData);
+                setBar(chartData);
 
-
+            })
+    }, [])
 
 
     return (
-        <ResponsiveContainer width="100%" height="100%" >
 
-            <BarChart
-                width={500}
-                height={300}
-                data={dataChart}
-                margin={{
-                    top: 5,
-                    right: 30,
-                    left: 20,
-                    bottom: 5,
-                }}
-            >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey='name' />
-                <YAxis dataKey='total' />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey='name' fill="#8884d8" />
-                <Bar dataKey='total' fill="#82ca9d" />
-            </BarChart>
-        </ResponsiveContainer >
+
+        <BarChart width={550} height={400} data={bar}>
+            <Bar dataKey="total" fill="#8884d8" />
+            <XAxis dataKey="name" />
+            <YAxis dataKey='total' />
+        </BarChart>
+
     );
 };
 
