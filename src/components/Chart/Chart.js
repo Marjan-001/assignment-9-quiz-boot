@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { Tooltip } from 'flowbite-react';
 // import { Tooltip } from 'flowbite-react';
 import React, { useEffect, useState } from 'react';
-import { Bar, BarChart, XAxis, YAxis } from 'recharts';
+import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 
 const Chart = () => {
 
@@ -28,12 +29,16 @@ const Chart = () => {
 
     return (
 
+        <ResponsiveContainer width='95%' height={400}>
+            <BarChart width={550} height={400} data={bar}>
+                <Bar dataKey="total" fill="#ffffff" />
+                <Tooltip />
+                <XAxis dataKey="name" />
+                <YAxis dataKey='total' />
+            </BarChart>
 
-        <BarChart width={550} height={400} data={bar}>
-            <Bar dataKey="total" fill="#8884d8" />
-            <XAxis dataKey="name" />
-            <YAxis dataKey='total' />
-        </BarChart>
+        </ResponsiveContainer>
+
 
     );
 };
