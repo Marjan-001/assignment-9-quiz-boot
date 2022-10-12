@@ -7,6 +7,7 @@ const Topics = ({ topics }) => {
     const { id, name, logo } = topics
 
 
+
     return (
         <div className="max-w-sm rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
 
