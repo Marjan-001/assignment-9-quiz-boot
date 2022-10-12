@@ -1,8 +1,22 @@
+# Projects Details
+The task of this projects is to make a quiz website. Here We have to use react router dom. 
+# Feature
+Home page contain responsive navbar.
+Topics card.
+Button to start quiz.
+Show right and wrong using toast.
+Add an icon to show correct answer
+Blog page
+Use rechart in statistic page
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
+
+
 
 In the project directory, you can run:
 
@@ -68,3 +82,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
