@@ -1,3 +1,32 @@
+@keyframes example {
+
+    0% {
+        color: darkturquoise;
+        left: 0px;
+    }
+
+    25% {
+        color: skyblue;
+        left: 200px;
+    }
+
+    50% {
+        color: blue;
+        left: 0px;
+    }
+
+    100% {
+        color: lightblue;
+        left: 200px;
+    }
+
+}
+
+body {
+    margin: 0 auto;
+    background-image: url(/public/images/blue-concrete-wall-textures-background.jpg);
+}
+
 .topic-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -8,19 +37,24 @@
 h1 {
     font-size: 40px;
     font-weight: 600;
-    color: white
+    color: white;
+
 }
 
 p {
     font-size: 15px;
     color: white;
+
 }
 
-.home {
-    background-image: url(/public/images/blue-concrete-wall-textures-background.jpg);
-}
 
 .site-name {
     color: darkblue;
     font-size: 50px;
+    animation-name: example;
+    position: relative;
+    animation-duration: 10s;
+    animation-delay: 2s;
+    animation-iteration-count: 4;
+    animation-direction: alternate-reverse;
 }
